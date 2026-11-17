@@ -441,7 +441,7 @@ def foto(slug, alt, icone, cls="shot", sizes="(max-width: 960px) 100vw, 560px"):
     # Fotos geradas por _build/otimizar_fotos.py em duas larguras (WebP leve).
     # Se o arquivo ainda não existir, a imagem some e o ícone do seguro aparece no lugar.
     if os.path.exists(os.path.join(RAIZ, "img", "fotos", f"{slug}-800.webp")):
-        img = (f'<img src="/img/fotos/{slug}-800.webp" srcset="/img/fotos/{slug}-800.webp 800w, /img/fotos/{slug}-1400.webp 1400w" '
+        img = (f'<img src="/img/fotos/{slug}-800.webp" srcset="/img/fotos/{slug}-480.webp 480w, /img/fotos/{slug}-800.webp 800w, /img/fotos/{slug}-1200.webp 1200w" '
                f'sizes="{sizes}" alt="{alt}" loading="lazy" decoding="async" '
                f'onerror="this.parentNode.classList.add(\'nofoto\')">')
         extra = ""

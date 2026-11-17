@@ -12,8 +12,8 @@ Uso (na raiz do repositório):
     2. python3 _build/otimizar_fotos.py
     3. python3 _build/gerar.py
 
-Saída: img/fotos/<slug>-800.webp e img/fotos/<slug>-1400.webp
-(cerca de 40 a 120 KB cada). Os originais ficam em _build/ e não são publicados.
+Saída: img/fotos/<slug>-480.webp, -800.webp e -1200.webp
+(cerca de 15 a 150 KB cada). Os originais ficam em _build/ e não são publicados.
 """
 import os
 import sys
@@ -23,7 +23,7 @@ from PIL import Image, ImageOps
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ORIGEM = os.path.join(RAIZ, "_build", "fotos")
 DESTINO = os.path.join(RAIZ, "img", "fotos")
-LARGURAS = (800, 1400)
+LARGURAS = (480, 800, 1200)
 
 
 def main():
