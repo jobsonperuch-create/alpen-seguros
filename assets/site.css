@@ -295,3 +295,13 @@ footer address{font-style:normal}
 .shot img{object-position:50% 30%}
 .shot.wide img{object-position:50% 55%}
 .flood-img img{object-position:50% 55%}
+
+/* Cards em destaque (auto e residencial): ocupam duas colunas */
+.cards li.destaque{grid-column:span 2}
+.cards li.destaque a{aspect-ratio:1.55}
+.cards li.destaque h3{font-size:30px}
+@media (max-width:600px){
+  .cards li.destaque a{aspect-ratio:16/10}
+  .cards li.destaque h3{font-size:24px}
+  .cards li.destaque .one{display:block}
+}

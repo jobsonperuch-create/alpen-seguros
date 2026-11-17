@@ -44,6 +44,8 @@ ICONES = {
     "pro": '<rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="9" cy="12" r="2.2"/><path d="M5.5 17.5c.6-1.6 2-2.5 3.5-2.5s2.9.9 3.5 2.5M15 11h3M15 14h3M9 6V4h6v2"/>',
     "water": '<path d="M12 3s-5 5.6-5 9.2A5 5 0 0 0 12 17a5 5 0 0 0 5-4.8C17 8.6 12 3 12 3Z"/><path d="M3 20c1.5 0 1.5-1 3-1s1.5 1 3 1 1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1"/>',
     "next": '<path d="m9 6 6 6-6 6"/>',
+    "scale": '<path d="M12 4v16M8 20h8M5 7h14M12 4l0 3"/><path d="M5 7 2.5 13a2.5 2.5 0 0 0 5 0Z"/><path d="M19 7l-2.5 6a2.5 2.5 0 0 0 5 0Z"/>',
+    "shieldcheck": '<path d="M12 3 5 6v5c0 4.4 3 8.3 7 10 4-1.7 7-5.6 7-10V6Z"/><path d="m9 12 2 2 4-4"/>',
     "shield": '<path d="M12 3 5 6v5c0 4.4 3 8.3 7 10 4-1.7 7-5.6 7-10V6Z"/><path d="M12 8v4M12 15.5v.5"/>',
     "refresh": '<path d="M20 11a8 8 0 0 0-14.3-4.9L4 8M4 4v4h4M4 13a8 8 0 0 0 14.3 4.9L20 16M20 20v-4h-4"/>',
     "receipt": '<path d="M6 3h12v18l-3-2-3 2-3-2-3 2Z"/><path d="M9 8h6M9 12h6M9 16h3"/>',
@@ -190,7 +192,7 @@ PAGINAS = [
             ("O que é lucros cessantes?", "É a cobertura que paga uma renda para a empresa enquanto ela está parada se recuperando de um sinistro, além do prejuízo material."),
             ("Como fazer a cotação do seguro empresarial?", "Preencha o formulário desta página e informe pelo WhatsApp a razão social, o CNPJ e o CEP. A cotação é gratuita."),
         ],
-        "relacionados": ["seguro-para-profissionais", "plano-de-saude-empresarial", "plano-dental", "seguro-de-vida"],
+        "relacionados": ["seguro-d-o", "seguro-garantia-judicial", "plano-de-saude-empresarial", "seguro-para-profissionais"],
     },
     {
         "slug": "plano-de-saude-empresarial", "nome": "Plano de Saúde Empresarial", "icone": "health", "chip": "Saúde PJ",
@@ -245,7 +247,7 @@ PAGINAS = [
         "relacionados": ["plano-de-saude-empresarial", "seguro-empresarial", "seguro-de-vida", "seguro-para-profissionais"],
     },
     {
-        "slug": "seguro-para-profissionais", "nome": "Advogados, médicos e contadores", "icone": "pro", "chip": "Profissional",
+        "slug": "seguro-para-profissionais", "nome": "Advogados, médicos e contadores", "nome_frase": "seguros para profissionais", "icone": "pro", "chip": "Profissional",
         "valor_chip": "Seguro para Profissional Liberal",
         "curto": "Responsabilidade civil profissional, vida e saúde.",
         "title": "Seguro para Advogado, Médico e Contador no ES | Alpen Seguros",
@@ -256,7 +258,7 @@ PAGINAS = [
         "foto_alt": "Profissional em reunião com cliente no escritório",
         "perfis": [
             ("Seguro para advogados", "Um prazo perdido ou uma orientação errada pode virar processo do próprio cliente.",
-             ["Responsabilidade civil profissional", "Seguro de vida com cobertura de invalidez", "Seguro empresarial para o escritório", "Plano de saúde e dental pelo CNPJ"]),
+             ["Responsabilidade civil profissional", "Seguro garantia judicial para processos dos clientes", "Seguro de vida com cobertura de invalidez", "Plano de saúde e dental pelo CNPJ"]),
             ("Seguro para médicos", "Processo por erro médico custa caro mesmo quando o médico tem razão. E sem atender, a renda para.",
              ["Responsabilidade civil profissional médica", "Seguro de vida com diária por incapacidade", "Seguro do consultório e dos equipamentos", "Plano de saúde empresarial"]),
             ("Seguro para contadores", "Um erro em guia, declaração ou prazo fiscal gera multa ao cliente, e a cobrança volta para o escritório.",
@@ -268,7 +270,59 @@ PAGINAS = [
             ("Médico que trabalha em hospital precisa de seguro próprio?", "Em geral, sim. O seguro do hospital protege o hospital, e o processo pode ser movido contra o médico pessoalmente. Um seguro de RC profissional em seu nome cobre a sua defesa."),
             ("Posso contratar plano de saúde pelo CNPJ do escritório ou consultório?", "Sim. O plano de saúde empresarial Bradesco aceita a partir de 3 vidas, entre sócios e funcionários, e costuma custar menos que o individual."),
         ],
-        "relacionados": ["seguro-de-vida", "seguro-empresarial", "plano-de-saude-empresarial", "plano-dental"],
+        "relacionados": ["seguro-garantia-judicial", "seguro-d-o", "seguro-de-vida", "plano-de-saude-empresarial"],
+    },
+    {
+        "slug": "seguro-garantia-judicial", "nome": "Seguro Garantia Judicial", "icone": "scale", "chip": "Garantia judicial",
+        "curto": "Substitui depósito em dinheiro e penhora em processos.",
+        "title": "Seguro Garantia Judicial no ES | Alpen Seguros",
+        "desc": "Seguro garantia judicial para empresas e advogados no ES: substitui o depósito em dinheiro e a penhora de bens em processos trabalhistas, cíveis e fiscais.",
+        "h1": "Seguro garantia judicial",
+        "lead": "Em vez de depositar dinheiro ou ter bens penhorados num processo, a empresa apresenta uma apólice de seguro. O caixa fica livre enquanto a ação corre.",
+        "destaques": ["Aceito na Justiça do Trabalho, cível e fiscal", "Libera o caixa da empresa durante o processo", "Emissão rápida para cumprir o prazo do processo"],
+        "foto_alt": "Empresário e advogada revisando documentos de um processo",
+        "cobre_titulo": "Onde o seguro garantia judicial é usado",
+        "cobre": ["Depósito recursal na Justiça do Trabalho", "Substituição de penhora em ações cíveis", "Execuções fiscais federais, estaduais e municipais", "Garantia em recursos e embargos", "Substituição de depósito judicial já feito, quando o juiz autoriza", "Vigência acompanhando o andamento do processo"],
+        "dado": {"titulo": "O seguro vale como dinheiro no processo", "texto": "Para substituir a penhora, a lei equipara o seguro garantia judicial ao dinheiro, desde que o valor seja o do débito acrescido de 30%.", "fonte": "Fonte: Código de Processo Civil, art. 835, § 2º"},
+        "casos_titulo": "Quando o seguro garantia judicial faz diferença",
+        "casos": [
+            ("Recurso trabalhista sem tirar dinheiro do caixa", "O depósito recursal pode ser feito com seguro garantia, como prevê a CLT."),
+            ("Conta ou bens penhorados", "A apólice pode substituir a penhora e liberar o dinheiro ou os bens da empresa."),
+            ("Execução fiscal", "A empresa garante o débito discutido e segue operando enquanto se defende."),
+            ("Advogado orientando o cliente", "Indicar o seguro garantia evita bloqueios e dá fôlego ao cliente durante a defesa."),
+        ],
+        "faq": [
+            ("O que é seguro garantia judicial?", "É uma apólice que garante ao juiz o pagamento do valor discutido no processo, no lugar de depósito em dinheiro, fiança bancária ou penhora de bens."),
+            ("Quanto custa o seguro garantia judicial?", "O preço é um percentual anual do valor garantido e depende da análise de crédito da empresa e do tipo de processo. Costuma ser bem menor do que deixar o valor inteiro parado em juízo."),
+            ("O advogado pode contratar para o cliente?", "Normalmente o advogado indica e a empresa contrata a apólice. Atendemos o escritório e o cliente juntos para emitir dentro do prazo do processo."),
+        ],
+        "relacionados": ["seguro-d-o", "seguro-para-profissionais", "seguro-empresarial", "plano-de-saude-empresarial"],
+    },
+    {
+        "slug": "seguro-d-o", "nome": "Seguro D&O", "nome_frase": "seguro D&O", "icone": "shieldcheck", "chip": "D&O",
+        "curto": "Protege o patrimônio pessoal de sócios e diretores.",
+        "title": "Seguro D&O para Sócios e Diretores no ES | Alpen Seguros",
+        "desc": "Seguro D&O (responsabilidade civil de administradores) protege o patrimônio pessoal de sócios e diretores em processos ligados à gestão da empresa.",
+        "h1": "Seguro D&O para sócios e diretores",
+        "lead": "Sócios e diretores podem responder com o patrimônio pessoal por decisões de gestão. O D&O paga a defesa e as indenizações, sem colocar em risco a casa e as economias de quem administra.",
+        "destaques": ["Custos de defesa desde o início do processo", "Indenizações e acordos pagos pela apólice", "Para empresas de todos os portes, não só S.A."],
+        "foto_alt": "Diretores conversando em sala de reunião",
+        "cobre_titulo": "O que o seguro D&O cobre",
+        "cobre": ["Honorários de advogados e custos de defesa", "Indenizações e acordos aprovados pela seguradora", "Processos movidos por sócios, credores, funcionários ou órgãos públicos", "Responsabilização pessoal por decisões de gestão", "Custos para responder a investigações e processos administrativos", "Sócios, diretores, conselheiros e gestores com poder de decisão"],
+        "dado": {"titulo": "A dívida da empresa pode chegar ao patrimônio do sócio", "texto": "Em processos trabalhistas e de consumo, a Justiça pode alcançar os bens de sócios e administradores. Sem D&O, a defesa sai do bolso de quem administra.", "fonte": ""},
+        "casos_titulo": "Quando o seguro D&O faz diferença",
+        "casos": [
+            ("Sócio processado pessoalmente", "Em ações trabalhistas e de consumo, o pedido pode atingir os bens do sócio. O D&O paga a defesa."),
+            ("Credor cobra o diretor", "Fornecedores e bancos podem alegar má gestão e processar o administrador."),
+            ("Fiscalização de órgão público", "Investigações e processos administrativos geram custos de defesa altos, mesmo sem condenação."),
+            ("Conflito entre sócios", "Disputas sobre decisões de gestão podem ser cobertas, conforme as condições da apólice."),
+        ],
+        "faq": [
+            ("O que é seguro D&O?", "É o seguro de responsabilidade civil de administradores (Directors and Officers). Protege o patrimônio pessoal de sócios, diretores e gestores quando são processados por atos de gestão."),
+            ("Empresa pequena precisa de seguro D&O?", "Pode precisar. Em empresas limitadas, o patrimônio dos sócios também pode ser atingido. O D&O serve para qualquer empresa com sócios ou diretores tomando decisões."),
+            ("O D&O cobre multas e impostos da empresa?", "Em geral, não. Tributos e multas da própria empresa costumam ser excluídos. O D&O protege as pessoas que administram. Explicamos as exclusões antes de você contratar."),
+        ],
+        "relacionados": ["seguro-garantia-judicial", "seguro-empresarial", "seguro-para-profissionais", "seguro-de-vida"],
     },
 ]
 
@@ -322,7 +376,11 @@ CARDS = {
     "plano-de-saude-empresarial": ("empresa familia", "A partir de 3 vidas"),
     "plano-dental": ("familia empresa", "Urgência em 24h"),
     "seguro-para-profissionais": ("empresa", "RC profissional"),
+    "seguro-garantia-judicial": ("empresa", "Libera o caixa"),
+    "seguro-d-o": ("empresa", "Protege os sócios"),
 }
+# Cards maiores na primeira fileira (os seguros mais buscados)
+DESTAQUE = {"seguro-auto", "seguro-residencial"}
 ABAS = [("todos", "Todos"), ("casa", "Carro e casa"), ("familia", "Família e futuro"), ("empresa", "Empresa e profissão")]
 
 # Atalhos para quem já é cliente: abrem o WhatsApp com a mensagem pronta
@@ -573,7 +631,8 @@ def home():
     cards = []
     for p in PAGINAS:
         seg, selo = CARDS[p["slug"]]
-        cards.append(f"""        <li data-seg="{seg}">
+        cls = ' class="destaque"' if p["slug"] in DESTAQUE else ""
+        cards.append(f"""        <li data-seg="{seg}"{cls}>
           <a href="/{p['slug']}/">
             {foto(p['slug'], p['foto_alt'], p['icone'], 'card-img', '(max-width: 600px) 50vw, (max-width: 960px) 50vw, 280px')}
             <span class="selo">{selo}</span>
@@ -787,7 +846,7 @@ def pagina(p):
 
   <section class="block">
     <div class="wrap">
-      <div class="head"><h2>Dúvidas sobre {p['nome'].lower() if p['slug'] != 'seguro-para-profissionais' else 'seguros para profissionais'}</h2></div>
+      <div class="head"><h2>Dúvidas sobre {p.get('nome_frase', p['nome'].lower())}</h2></div>
       <div class="faq">
 {faq_html(p['faq'])}
       </div>

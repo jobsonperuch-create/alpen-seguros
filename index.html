@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Newsreader:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=822b321b">
+<link rel="stylesheet" href="/assets/site.css?v=5fd6b6ce">
 <script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">
 {
@@ -160,6 +160,22 @@
     "@type": "Offer",
     "itemOffered": {
      "@type": "Service",
+     "name": "Seguro Garantia Judicial",
+     "url": "https://alpenseguros.com.br/seguro-garantia-judicial/"
+    }
+   },
+   {
+    "@type": "Offer",
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Seguro D&O",
+     "url": "https://alpenseguros.com.br/seguro-d-o/"
+    }
+   },
+   {
+    "@type": "Offer",
+    "itemOffered": {
+     "@type": "Service",
      "name": "Seguro contra alagamento",
      "url": "https://alpenseguros.com.br/seguro-alagamento/"
     }
@@ -286,6 +302,8 @@ document.addEventListener('click',function(e){if(e.target.closest('a[href*="wa.m
             <label class="chip"><input type="radio" name="produto" value="Plano de Saúde Empresarial"><span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M12 8v8M8 12h8"/></svg>Saúde PJ</span></label>
             <label class="chip"><input type="radio" name="produto" value="Plano Dental"><span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3.5c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 7 .5 3 1 5.5 2.5 5.5S9.5 17 10 15c.4-1.4 1-2 2-2s1.6.6 2 2c.5 2 1 5.5 2.5 5.5S18.5 18 19 15c.5-2.5 2-4 2-7 0-2.5-1.5-4.5-4-4.5-2 0-3 1-5 1s-3-1-5-1Z"/></svg>Dental</span></label>
             <label class="chip"><input type="radio" name="produto" value="Seguro para Profissional Liberal"><span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="9" cy="12" r="2.2"/><path d="M5.5 17.5c.6-1.6 2-2.5 3.5-2.5s2.9.9 3.5 2.5M15 11h3M15 14h3M9 6V4h6v2"/></svg>Profissional</span></label>
+            <label class="chip"><input type="radio" name="produto" value="Seguro Garantia Judicial"><span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16M8 20h8M5 7h14M12 4l0 3"/><path d="M5 7 2.5 13a2.5 2.5 0 0 0 5 0Z"/><path d="M19 7l-2.5 6a2.5 2.5 0 0 0 5 0Z"/></svg>Garantia judicial</span></label>
+            <label class="chip"><input type="radio" name="produto" value="Seguro D&O"><span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v5c0 4.4 3 8.3 7 10 4-1.7 7-5.6 7-10V6Z"/><path d="m9 12 2 2 4-4"/></svg>D&O</span></label>
           </div>
         </fieldset>
         <div class="field">
@@ -329,14 +347,14 @@ document.addEventListener('click',function(e){if(e.target.closest('a[href*="wa.m
         <button type="button" data-seg="empresa" aria-pressed="false">Empresa e profissão</button>
       </div>
       <ul class="cards">
-        <li data-seg="casa">
+        <li data-seg="casa" class="destaque">
           <a href="/seguro-auto/">
             <figure class="card-img reveal"><img src="/img/fotos/seguro-auto-800.webp" srcset="/img/fotos/seguro-auto-480.webp 480w, /img/fotos/seguro-auto-800.webp 800w, /img/fotos/seguro-auto-1200.webp 1200w" sizes="(max-width: 600px) 50vw, (max-width: 960px) 50vw, 280px" alt="Carro estacionado em rua de Vila Velha" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('nofoto')"><svg class="fallback" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14M3 13l2-5.5A2 2 0 0 1 6.9 6h10.2a2 2 0 0 1 1.9 1.5L21 13v4h-2.5M5.5 17H3v-4h18"/><circle cx="7.5" cy="17" r="1.8"/><circle cx="16.5" cy="17" r="1.8"/></svg></figure>
             <span class="selo">Assistência 24h</span>
             <span class="card-body"><h3>Seguro Auto</h3><span class="one">Colisão, roubo, alagamento e assistência 24h.</span><span class="more">Ver coberturas</span></span>
           </a>
         </li>
-        <li data-seg="casa">
+        <li data-seg="casa" class="destaque">
           <a href="/seguro-residencial/">
             <figure class="card-img reveal"><img src="/img/fotos/seguro-residencial-800.webp" srcset="/img/fotos/seguro-residencial-480.webp 480w, /img/fotos/seguro-residencial-800.webp 800w, /img/fotos/seguro-residencial-1200.webp 1200w" sizes="(max-width: 600px) 50vw, (max-width: 960px) 50vw, 280px" alt="Sala de estar de um apartamento" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('nofoto')"><svg class="fallback" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></figure>
             <span class="selo">Menos de R$ 50/mês</span>
@@ -383,6 +401,20 @@ document.addEventListener('click',function(e){if(e.target.closest('a[href*="wa.m
             <figure class="card-img reveal"><img src="/img/fotos/seguro-para-profissionais-800.webp" srcset="/img/fotos/seguro-para-profissionais-480.webp 480w, /img/fotos/seguro-para-profissionais-800.webp 800w, /img/fotos/seguro-para-profissionais-1200.webp 1200w" sizes="(max-width: 600px) 50vw, (max-width: 960px) 50vw, 280px" alt="Profissional em reunião com cliente no escritório" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('nofoto')"><svg class="fallback" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="9" cy="12" r="2.2"/><path d="M5.5 17.5c.6-1.6 2-2.5 3.5-2.5s2.9.9 3.5 2.5M15 11h3M15 14h3M9 6V4h6v2"/></svg></figure>
             <span class="selo">RC profissional</span>
             <span class="card-body"><h3>Advogados, médicos e contadores</h3><span class="one">Responsabilidade civil profissional, vida e saúde.</span><span class="more">Ver coberturas</span></span>
+          </a>
+        </li>
+        <li data-seg="empresa">
+          <a href="/seguro-garantia-judicial/">
+            <figure class="card-img reveal"><img src="/img/fotos/seguro-garantia-judicial-800.webp" srcset="/img/fotos/seguro-garantia-judicial-480.webp 480w, /img/fotos/seguro-garantia-judicial-800.webp 800w, /img/fotos/seguro-garantia-judicial-1200.webp 1200w" sizes="(max-width: 600px) 50vw, (max-width: 960px) 50vw, 280px" alt="Empresário e advogada revisando documentos de um processo" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('nofoto')"><svg class="fallback" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16M8 20h8M5 7h14M12 4l0 3"/><path d="M5 7 2.5 13a2.5 2.5 0 0 0 5 0Z"/><path d="M19 7l-2.5 6a2.5 2.5 0 0 0 5 0Z"/></svg></figure>
+            <span class="selo">Libera o caixa</span>
+            <span class="card-body"><h3>Seguro Garantia Judicial</h3><span class="one">Substitui depósito em dinheiro e penhora em processos.</span><span class="more">Ver coberturas</span></span>
+          </a>
+        </li>
+        <li data-seg="empresa">
+          <a href="/seguro-d-o/">
+            <figure class="card-img reveal"><img src="/img/fotos/seguro-d-o-800.webp" srcset="/img/fotos/seguro-d-o-480.webp 480w, /img/fotos/seguro-d-o-800.webp 800w, /img/fotos/seguro-d-o-1200.webp 1200w" sizes="(max-width: 600px) 50vw, (max-width: 960px) 50vw, 280px" alt="Diretores conversando em sala de reunião" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('nofoto')"><svg class="fallback" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v5c0 4.4 3 8.3 7 10 4-1.7 7-5.6 7-10V6Z"/><path d="m9 12 2 2 4-4"/></svg></figure>
+            <span class="selo">Protege os sócios</span>
+            <span class="card-body"><h3>Seguro D&O</h3><span class="one">Protege o patrimônio pessoal de sócios e diretores.</span><span class="more">Ver coberturas</span></span>
           </a>
         </li>
       </ul>
@@ -504,6 +536,8 @@ document.addEventListener('click',function(e){if(e.target.closest('a[href*="wa.m
           <li><a href="/plano-de-saude-empresarial/">Plano de Saúde Empresarial</a></li>
           <li><a href="/plano-dental/">Plano Dental</a></li>
           <li><a href="/seguro-para-profissionais/">Advogados, médicos e contadores</a></li>
+          <li><a href="/seguro-garantia-judicial/">Seguro Garantia Judicial</a></li>
+          <li><a href="/seguro-d-o/">Seguro D&O</a></li>
           <li><a href="/seguro-alagamento/">Seguro contra alagamento</a></li>
         </ul>
       </div>
