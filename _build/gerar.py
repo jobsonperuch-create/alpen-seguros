@@ -458,6 +458,13 @@ def foto(slug, alt, icone, cls="shot", sizes="(max-width: 960px) 100vw, 560px"):
     return f'<figure class="{cls} reveal{extra}">{img}{ic(icone, "fallback")}</figure>'
 
 
+def foto_equipe(nome, iniciais):
+    # Só referencia a foto se o arquivo existir (evita um 404 a cada visita).
+    if os.path.exists(os.path.join(RAIZ, "img", "equipe", f"{nome}.jpg")):
+        return f'<img src="/img/equipe/{nome}.jpg" alt="" width="176" height="176" loading="lazy">'
+    return iniciais
+
+
 def faq_html(itens, links=None):
     out = []
     for q, a in itens:
@@ -654,7 +661,7 @@ def home():
       <div class="team">
         <h3>Equipe</h3>
         <div class="person">
-          <span class="ph" aria-hidden="true"><img src="/img/equipe/jobson.jpg" alt="" loading="lazy" onerror="this.remove()">JA</span>
+          <span class="ph" aria-hidden="true">{foto_equipe("jobson", "JA")}</span>
           <div>
             <strong>Jobson Azevedo</strong>
             <span class="role">Fundador e corretor responsável</span>
