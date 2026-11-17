@@ -305,3 +305,11 @@ footer address{font-style:normal}
   .cards li.destaque h3{font-size:24px}
   .cards li.destaque .one{display:block}
 }
+
+/* Com filtro ativo: todos os cards no mesmo tamanho, sem buracos na grade */
+.cards.filtrado{grid-template-columns:repeat(var(--cols,3),1fr)}
+.cards.filtrado li.destaque{grid-column:auto}
+.cards.filtrado a,.cards.filtrado li.destaque a{aspect-ratio:4/5}
+.cards.filtrado li.destaque h3{font-size:25px}
+@media (max-width:960px){.cards.filtrado{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.cards.filtrado li.destaque h3{font-size:19px}.cards.filtrado li.destaque .one{display:none}}

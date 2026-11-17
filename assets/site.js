@@ -39,6 +39,13 @@
   }
   function aplicar(seg) {
     var n = 0;
+    var grade = document.querySelector('.cards');
+    var total = cards.filter(function (li) {
+      return seg === 'todos' || (' ' + li.getAttribute('data-seg') + ' ').indexOf(' ' + seg + ' ') >= 0;
+    }).length;
+    // Com filtro: cards do mesmo tamanho; 3 colunas (ou 4 quando são exatamente 4)
+    grade.classList.toggle('filtrado', seg !== 'todos');
+    grade.style.setProperty('--cols', total === 4 ? 4 : 3);
     cards.forEach(function (li) {
       li.classList.remove('saindo', 'entrando');
       li.hidden = seg !== 'todos' && (' ' + li.getAttribute('data-seg') + ' ').indexOf(' ' + seg + ' ') < 0;
