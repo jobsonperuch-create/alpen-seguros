@@ -461,7 +461,7 @@ def foto(slug, alt, icone, cls="shot", sizes="(max-width: 960px) 100vw, 560px"):
 def foto_equipe(nome, iniciais):
     # Só referencia a foto se o arquivo existir (evita um 404 a cada visita).
     if os.path.exists(os.path.join(RAIZ, "img", "equipe", f"{nome}.jpg")):
-        return f'<img src="/img/equipe/{nome}.jpg" alt="" width="176" height="176" loading="lazy">'
+        return f'<img src="/img/equipe/{nome}.jpg" alt="" width="400" height="400" loading="lazy" decoding="async">'
     return iniciais
 
 
