@@ -1,9 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.alpenseguros.com.br/</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://alpenseguros.com.br/</loc>
+    <lastmod>2026-11-17</lastmod>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://alpenseguros.com.br/seguro-auto/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alpenseguros.com.br/seguro-residencial/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alpenseguros.com.br/seguro-de-vida/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alpenseguros.com.br/consorcio/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alpenseguros.com.br/seguro-empresarial/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alpenseguros.com.br/plano-de-saude-empresarial/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alpenseguros.com.br/plano-dental/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alpenseguros.com.br/seguro-para-profissionais/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alpenseguros.com.br/seguro-garantia-judicial/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alpenseguros.com.br/seguro-d-o/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alpenseguros.com.br/seguro-alagamento/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <priority>0.8</priority>
   </url>
 </urlset>
