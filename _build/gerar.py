@@ -634,7 +634,7 @@ def empresa_ld():
         "telephone": "+55-27-99985-7302",
         "email": "jobson.azevedo@alpenseguros.com.br",
         "founder": {"@type": "Person", "name": "Jobson Azevedo", "jobTitle": "Corretor de seguros"},
-        "foundingDate": "2025",
+        "foundingDate": "2026-05-15",
         "address": {"@type": "PostalAddress", "streetAddress": "R. Neves Armond, 174", "addressLocality": "Vitória",
                     "addressRegion": "ES", "postalCode": "29052-280", "addressCountry": "BR"},
         "geo": {"@type": "GeoCoordinates", "latitude": -20.3010, "longitude": -40.2917},
@@ -739,7 +739,7 @@ def home():
       <div>
         <h2>Sobre a Alpen Seguros</h2>
         <blockquote>Criamos a Alpen depois de ver muitas famílias descobrirem, na hora do sinistro, que o seguro não cobria o que elas achavam.</blockquote>
-        <p class="lead">A Alpen Seguros é uma corretora independente credenciada na SUSEP, fundada em 2025 na Grande Vitória. Trabalhamos com seguros Bradesco e atendemos pessoas, famílias, empresas e profissionais liberais de todo o Espírito Santo.</p>
+        <p class="lead">A Alpen Seguros é uma corretora independente credenciada na SUSEP, fundada em 2026 na Grande Vitória. Trabalhamos com seguros Bradesco e atendemos pessoas, famílias, empresas e profissionais liberais de todo o Espírito Santo.</p>
         <p class="lead">Nosso jeito de trabalhar: explicar cada cobertura antes da assinatura, avisar antes do vencimento e acompanhar o cliente no sinistro até a indenização.</p>
       </div>
       <div class="team">
