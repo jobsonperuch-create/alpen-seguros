@@ -24,6 +24,14 @@ WA = "5527999857302"
 FONE_FMT = "(27) 99985-7302"
 HOJE = date.today().isoformat()
 
+
+def versao(rel):
+    """Hash curto do arquivo: muda a URL quando o conteúdo muda (evita cache antigo)."""
+    import hashlib
+    with open(os.path.join(RAIZ, rel), "rb") as f:
+        return hashlib.md5(f.read()).hexdigest()[:8]
+
+
 # ---------------------------------------------------------------- ícones
 ICONES = {
     "car": '<path d="M5 17h14M3 13l2-5.5A2 2 0 0 1 6.9 6h10.2a2 2 0 0 1 1.9 1.5L21 13v4h-2.5M5.5 17H3v-4h18"/><circle cx="7.5" cy="17" r="1.8"/><circle cx="16.5" cy="17" r="1.8"/>',
@@ -358,7 +366,7 @@ def head(title, desc, path, ld, og_title=None):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Newsreader:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/site.css?v={versao('assets/site.css')}">
 <script>document.documentElement.classList.add('js')</script>
 {blocos_ld}
 <!-- Google Ads: conversão "Clique no WhatsApp" (criada em 24/06/2026) -->
@@ -514,7 +522,7 @@ def footer():
   <a class="btn btn-gold" href="#cotacao" data-focus>Pedir cotação</a>
   <a class="btn btn-ghost" href="tel:+{WA}" aria-label="Ligar para a Alpen Seguros">Ligar</a>
 </div>
-<script src="/assets/site.js" defer></script>
+<script src="/assets/site.js?v={versao('assets/site.js')}" defer></script>
 </body>
 </html>
 """
