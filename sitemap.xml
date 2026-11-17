@@ -3,7 +3,51 @@
   <url>
     <loc>https://alpenseguros.com.br/</loc>
     <lastmod>2026-11-17</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://alpenseguros.com.br/seguro-auto/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alpenseguros.com.br/seguro-residencial/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alpenseguros.com.br/seguro-de-vida/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alpenseguros.com.br/consorcio/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alpenseguros.com.br/seguro-empresarial/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alpenseguros.com.br/plano-de-saude-empresarial/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alpenseguros.com.br/plano-dental/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alpenseguros.com.br/seguro-para-profissionais/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alpenseguros.com.br/seguro-alagamento/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <priority>0.8</priority>
   </url>
 </urlset>
