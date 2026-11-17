@@ -217,6 +217,10 @@ footer h2{color:var(--white);font:600 15px var(--sans);margin-bottom:10px}
 footer a{color:#C9D4E1;display:inline-block;padding:3px 0}
 footer ul{list-style:none;padding:0}
 footer address{font-style:normal}
+.contact a{display:inline-flex;align-items:center;gap:12px;padding:6px 0;text-decoration:none}
+.contact svg{width:22px;height:22px;flex:none;color:var(--gold)}
+.contact a:hover span{text-decoration:underline;text-underline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .foot-logo{width:150px;height:auto;margin-bottom:18px}
 .legal{border-top:1px solid #1E3150;margin-top:36px;padding-top:20px;font-size:13px}
 

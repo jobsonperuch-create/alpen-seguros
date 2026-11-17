@@ -494,10 +494,10 @@ def footer():
       </div>
       <div>
         <h2>Contato</h2>
-        <ul>
-          <li><a href="https://wa.me/{WA}">WhatsApp {FONE_FMT}</a></li>
-          <li><a href="mailto:jobson.azevedo@alpenseguros.com.br">jobson.azevedo@alpenseguros.com.br</a></li>
-          <li><a href="https://www.instagram.com/alpenseguros">Instagram @alpenseguros</a></li>
+        <ul class="contact">
+          <li><a href="https://wa.me/{WA}"><svg viewBox="0 0 24 24" aria-hidden="true">{WA_PATH}</svg><span><span class="sr">WhatsApp </span>{FONE_FMT}</span></a></li>
+          <li><a href="mailto:jobson.azevedo@alpenseguros.com.br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/></svg><span><span class="sr">E-mail </span>jobson.azevedo@alpenseguros.com.br</span></a></li>
+          <li><a href="https://www.instagram.com/alpenseguros"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".8" fill="currentColor" stroke="none"/></svg><span><span class="sr">Instagram </span>@alpenseguros</span></a></li>
         </ul>
       </div>
       <div>
