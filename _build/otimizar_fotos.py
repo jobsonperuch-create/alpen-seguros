@@ -8,7 +8,7 @@ Uso (na raiz do repositório):
          _build/fotos/seguro-residencial.png
          ...
        Nomes aceitos: os slugs das páginas (veja PAGINAS em gerar.py)
-       e "seguro-alagamento".
+       e "seguro-alagamento". Subpastas (ex.: _build/fotos/equipe/) são ignoradas.
     2. python3 _build/otimizar_fotos.py
     3. python3 _build/gerar.py
 
@@ -25,6 +25,11 @@ ORIGEM = os.path.join(RAIZ, "_build", "fotos")
 DESTINO = os.path.join(RAIZ, "img", "fotos")
 LARGURAS = (480, 800, 1200)
 
+# Fotos exibidas como faixa larga: recorte próprio em alta, a partir do original.
+# slug -> (proporção largura/altura, posição vertical do recorte de 0 a 1)
+FAIXAS = {"seguro-para-profissionais": (21 / 8, 0.55)}
+LARGURAS_FAIXA = (1100, 2000)
+
 
 def main():
     if not os.path.isdir(ORIGEM):
@@ -40,6 +45,16 @@ def main():
             saida = os.path.join(DESTINO, f"{base}-{w}.webp")
             alvo.save(saida, "WEBP", quality=72, method=6)
             print(f"{saida}  {os.path.getsize(saida) // 1024} KB")
+        if base in FAIXAS:
+            prop, pos = FAIXAS[base]
+            h = round(im.width / prop)
+            topo = round((im.height - h) * pos)
+            faixa = im.crop((0, topo, im.width, topo + h))
+            for w in LARGURAS_FAIXA:
+                alvo = faixa if faixa.width <= w else faixa.resize((w, round(faixa.height * w / faixa.width)), Image.LANCZOS)
+                saida = os.path.join(DESTINO, f"{base}-faixa-{w}.webp")
+                alvo.save(saida, "WEBP", quality=82, method=6)
+                print(f"{saida}  {os.path.getsize(saida) // 1024} KB")
 
 
 if __name__ == "__main__":

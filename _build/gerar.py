@@ -329,6 +329,7 @@ PAGINAS = [
 # Página temática (não aparece como card nem chip; ligada pela faixa da home e pelas páginas de auto e residencial)
 ALAGAMENTO = {
     "slug": "seguro-alagamento", "nome": "Seguro contra alagamento", "icone": "water", "chip_padrao": "seguro-auto",
+    "opcoes_form": ["seguro-auto", "seguro-residencial"],
     "title": "Seguro contra Alagamento em Vila Velha (ES) | Alpen Seguros",
     "desc": "Carro alagado ou casa invadida pela água? Veja o que o seguro auto e o residencial cobrem em caso de alagamento e enchente em Vila Velha e Vitória.",
     "h1": "Seguro contra alagamento em Vila Velha",
@@ -473,22 +474,39 @@ def ridge():
     </svg>"""
 
 
-def form(pre="seguro-auto"):
-    chips = []
-    for p in PAGINAS:
+def form(pre="seguro-auto", opcoes=None):
+    """Formulário de cotação.
+    Home: todas as opções. Página de um seguro: opcoes=[slug] mostra o seguro fixo
+    (sem chips, para não parecer que clicar troca o conteúdo da página).
+    Página temática: opcoes com 2 ou mais slugs mostra só essas opções."""
+    lista = [POR_SLUG[s] for s in opcoes] if opcoes else PAGINAS
+    if len(lista) == 1:
+        p = lista[0]
         valor = p.get("valor_chip", p["nome"])
-        chk = " checked" if p["slug"] == pre else ""
-        chips.append(f'<label class="chip"><input type="radio" name="produto" value="{valor}"{chk}><span>{ic(p["icone"])}{p["chip"]}</span></label>')
-    chips_html = "\n            ".join(chips)
+        escolha = f"""        <div class="produto-fixo">
+          <input type="hidden" name="produto" value="{valor}">
+          <span class="pf-ic">{ic(p["icone"])}</span>
+          <span class="pf-txt">Cotação de<strong>{p["nome"]}</strong></span>
+          <a href="/#cotacao">Escolher outro seguro</a>
+        </div>"""
+    else:
+        chips = []
+        for p in lista:
+            valor = p.get("valor_chip", p["nome"])
+            chk = " checked" if p["slug"] == pre else ""
+            chips.append(f'<label class="chip"><input type="radio" name="produto" value="{valor}"{chk}><span>{ic(p["icone"])}{p["chip"]}</span></label>')
+        chips_html = "\n            ".join(chips)
+        cls = " poucas" if len(lista) < 4 else ""
+        escolha = f"""        <fieldset>
+          <legend>O que você quer proteger?</legend>
+          <div class="chips{cls}">
+            {chips_html}
+          </div>
+        </fieldset>"""
     return f"""      <form class="quote" id="cotacao" novalidate>
         <h2>Peça sua cotação</h2>
         <p class="sub">Grátis e sem compromisso. Leva 30 segundos.</p>
-        <fieldset>
-          <legend>O que você quer proteger?</legend>
-          <div class="chips">
-            {chips_html}
-          </div>
-        </fieldset>
+{escolha}
         <div class="field">
           <label for="nome">Seu nome</label>
           <input id="nome" name="nome" autocomplete="given-name" placeholder="Como podemos te chamar?">
@@ -504,8 +522,15 @@ def form(pre="seguro-auto"):
 
 
 def foto(slug, alt, icone, cls="shot", sizes="(max-width: 960px) 100vw, 560px"):
-    # Fotos geradas por _build/otimizar_fotos.py em duas larguras (WebP leve).
+    # Fotos geradas por _build/otimizar_fotos.py (WebP em várias larguras).
+    # "sizes" diz ao navegador a largura exibida, para ele baixar a versão certa.
     # Se o arquivo ainda não existir, a imagem some e o ícone do seguro aparece no lugar.
+    faixa = os.path.join(RAIZ, "img", "fotos", f"{slug}-faixa-2000.webp")
+    if "wide" in cls and os.path.exists(faixa):
+        img = (f'<img src="/img/fotos/{slug}-faixa-1100.webp" srcset="/img/fotos/{slug}-faixa-1100.webp 1100w, /img/fotos/{slug}-faixa-2000.webp 2000w" '
+               f'sizes="(max-width: 1120px) 100vw, 1072px" alt="{alt}" loading="lazy" decoding="async" '
+               f'onerror="this.parentNode.classList.add(\'nofoto\')">')
+        return f'<figure class="{cls} reveal">{img}{ic(icone, "fallback")}</figure>'
     if os.path.exists(os.path.join(RAIZ, "img", "fotos", f"{slug}-800.webp")):
         img = (f'<img src="/img/fotos/{slug}-800.webp" srcset="/img/fotos/{slug}-480.webp 480w, /img/fotos/{slug}-800.webp 800w, /img/fotos/{slug}-1200.webp 1200w" '
                f'sizes="{sizes}" alt="{alt}" loading="lazy" decoding="async" '
@@ -634,7 +659,7 @@ def home():
         cls = ' class="destaque"' if p["slug"] in DESTAQUE else ""
         cards.append(f"""        <li data-seg="{seg}"{cls}>
           <a href="/{p['slug']}/">
-            {foto(p['slug'], p['foto_alt'], p['icone'], 'card-img', '(max-width: 600px) 50vw, (max-width: 960px) 50vw, 280px')}
+            {foto(p['slug'], p['foto_alt'], p['icone'], 'card-img', '(max-width: 960px) 100vw, 560px' if p['slug'] in DESTAQUE else '(max-width: 960px) 50vw, 360px')}
             <span class="selo">{selo}</span>
             <span class="card-body"><h3>{p['nome']}</h3><span class="one">{p['curto']}</span><span class="more">Ver coberturas</span></span>
           </a>
@@ -837,7 +862,7 @@ def pagina(p):
 {destaques}
         </ul>
       </div>
-{form(pre)}
+{form(pre, p.get("opcoes_form", [p["slug"]]))}
     </div>
 {ridge()}
   </section>

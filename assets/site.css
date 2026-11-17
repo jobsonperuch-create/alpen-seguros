@@ -313,3 +313,13 @@ footer address{font-style:normal}
 .cards.filtrado li.destaque h3{font-size:25px}
 @media (max-width:960px){.cards.filtrado{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:600px){.cards.filtrado li.destaque h3{font-size:19px}.cards.filtrado li.destaque .one{display:none}}
+
+/* Formulário nas páginas de seguro: seguro fixo, sem chips */
+.produto-fixo{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:center;margin-top:22px;padding:16px;border-radius:12px;background:var(--glacier);border:1.5px solid var(--ink)}
+.produto-fixo .pf-ic{grid-row:span 2;width:44px;height:44px;border-radius:10px;background:var(--white);display:grid;place-items:center}
+.produto-fixo .pf-ic svg{width:24px;height:24px;stroke:var(--ink)}
+.produto-fixo .pf-txt{font-size:13px;color:var(--slate);line-height:1.3}
+.produto-fixo .pf-txt strong{display:block;font:500 20px/1.2 var(--serif);color:var(--ink)}
+.produto-fixo a{grid-column:2;font-size:14px;font-weight:600;color:var(--ink)}
+.chips.poucas{grid-template-columns:1fr 1fr}
+@media (max-width:600px){.chips.poucas span{flex-direction:column;justify-content:center;text-align:center}}

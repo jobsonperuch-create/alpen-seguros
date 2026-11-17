@@ -97,7 +97,8 @@
       return;
     }
     err.textContent = '';
-    var p = form.querySelector('input[name="produto"]:checked').value;
+    var sel = form.querySelector('input[name="produto"]:checked') || form.querySelector('input[name="produto"]');
+    var p = sel.value;
     var c = document.getElementById('cidade').value.trim();
     var msg = 'Olá! Sou ' + n + (c ? ' de ' + c : '') + '. Quero uma cotação de ' + p + '.';
     if (typeof window.alpenConversao === 'function') window.alpenConversao();
